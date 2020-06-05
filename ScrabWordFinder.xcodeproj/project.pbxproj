@@ -3,17 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AE83A18324812830000EC633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18224812830000EC633 /* AppDelegate.swift */; };
 		AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18424812830000EC633 /* SceneDelegate.swift */; };
-		AE83A18724812830000EC633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18624812830000EC633 /* ViewController.swift */; };
-		AE83A18A24812830000EC633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18824812830000EC633 /* Main.storyboard */; };
 		AE83A18C24812836000EC633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18B24812836000EC633 /* Assets.xcassets */; };
 		AE83A18F24812836000EC633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18D24812836000EC633 /* LaunchScreen.storyboard */; };
 		AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A19924812837000EC633 /* ScrabWordFinderTests.swift */; };
+		AE83A1A524813971000EC633 /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE83A1A424813971000EC633 /* wordlist.txt */; };
+		AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
+		AE83A1AD248151BA000EC633 /* SingleLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetter.swift */; };
+		AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFB5248551A300CC4262 /* dictionary.txt */; };
+		AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFB5248551A300CC4262 /* dictionary.txt */; };
+		AE8ADFBB24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */; };
+		AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */; };
+		AE8ADFBE2486A6CE00CC4262 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */; };
+		AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */; };
+		AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */; };
+		AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFC224880D6200CC4262 /* Main.storyboard */; };
+		AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFC224880D6200CC4262 /* Main.storyboard */; };
+		AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC62488E1C100CC4262 /* Constants.swift */; };
+		AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC62488E1C100CC4262 /* Constants.swift */; };
+		AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
+		AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
+		C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */; };
+		D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +43,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.release.xcconfig"; sourceTree = "<group>"; };
+		6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE83A17F24812830000EC633 /* ScrabWordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabWordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE83A18224812830000EC633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE83A18424812830000EC633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE83A18624812830000EC633 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE83A18924812830000EC633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE83A18B24812836000EC633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE83A18E24812836000EC633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE83A19024812836000EC633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE83A19524812837000EC633 /* ScrabWordFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrabWordFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE83A19924812837000EC633 /* ScrabWordFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabWordFinderTests.swift; sourceTree = "<group>"; };
 		AE83A19B24812837000EC633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE83A1A424813971000EC633 /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
+		AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabTextField.swift; sourceTree = "<group>"; };
+		AE83A1AC248151BA000EC633 /* SingleLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetter.swift; sourceTree = "<group>"; };
+		AE8ADFB5248551A300CC4262 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
+		AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrableAlgorithm.swift; sourceTree = "<group>"; };
+		AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AE8ADFC224880D6200CC4262 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AE8ADFC62488E1C100CC4262 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTableViewCell.swift; sourceTree = "<group>"; };
+		BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +83,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5286507D97F9CAE9C5CACED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */,
+				BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DE13C33C3B66A905F6B90CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */,
+				5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */,
+				52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */,
+				6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AE83A17624812830000EC633 = {
 			isa = PBXGroup;
 			children = (
 				AE83A18124812830000EC633 /* ScrabWordFinder */,
 				AE83A19824812837000EC633 /* ScrabWordFinderTests */,
 				AE83A18024812830000EC633 /* Products */,
+				9DE13C33C3B66A905F6B90CE /* Pods */,
+				5286507D97F9CAE9C5CACED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +133,16 @@
 		AE83A18124812830000EC633 /* ScrabWordFinder */ = {
 			isa = PBXGroup;
 			children = (
+				AE8ADFC52488E18200CC4262 /* Storyboards */,
+				AE83A1B2248530D4000EC633 /* Algorithm */,
+				AE83A1A924814AA7000EC633 /* CustomControls */,
+				AE83A1A8248145CC000EC633 /* ViewControllers */,
+				AE83A1A62481397E000EC633 /* Resources */,
 				AE83A18224812830000EC633 /* AppDelegate.swift */,
 				AE83A18424812830000EC633 /* SceneDelegate.swift */,
-				AE83A18624812830000EC633 /* ViewController.swift */,
-				AE83A18824812830000EC633 /* Main.storyboard */,
 				AE83A18B24812836000EC633 /* Assets.xcassets */,
-				AE83A18D24812836000EC633 /* LaunchScreen.storyboard */,
 				AE83A19024812836000EC633 /* Info.plist */,
+				AE8ADFC62488E1C100CC4262 /* Constants.swift */,
 			);
 			path = ScrabWordFinder;
 			sourceTree = "<group>";
@@ -99,6 +156,51 @@
 			path = ScrabWordFinderTests;
 			sourceTree = "<group>";
 		};
+		AE83A1A62481397E000EC633 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE8ADFB5248551A300CC4262 /* dictionary.txt */,
+				AE83A1A424813971000EC633 /* wordlist.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AE83A1A8248145CC000EC633 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */,
+				AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE83A1A924814AA7000EC633 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */,
+				AE83A1AC248151BA000EC633 /* SingleLetter.swift */,
+				AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		AE83A1B2248530D4000EC633 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		AE8ADFC52488E18200CC4262 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AE83A18D24812836000EC633 /* LaunchScreen.storyboard */,
+				AE8ADFC224880D6200CC4262 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE83A19E24812837000EC633 /* Build configuration list for PBXNativeTarget "ScrabWordFinder" */;
 			buildPhases = (
+				7D4FD163933151B0AAD972F9 /* [CP] Check Pods Manifest.lock */,
 				AE83A17B24812830000EC633 /* Sources */,
 				AE83A17C24812830000EC633 /* Frameworks */,
 				AE83A17D24812830000EC633 /* Resources */,
+				C262655EB62A0B71DC9B33B3 /* [CP] Embed Pods Frameworks */,
+				AE83A1A724814287000EC633 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -123,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE83A1A124812837000EC633 /* Build configuration list for PBXNativeTarget "ScrabWordFinderTests" */;
 			buildPhases = (
+				C8379E7F06FE6C3B487E935E /* [CP] Check Pods Manifest.lock */,
 				AE83A19124812837000EC633 /* Sources */,
 				AE83A19224812837000EC633 /* Frameworks */,
 				AE83A19324812837000EC633 /* Resources */,
@@ -181,8 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE83A18F24812836000EC633 /* LaunchScreen.storyboard in Resources */,
+				AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */,
 				AE83A18C24812836000EC633 /* Assets.xcassets in Resources */,
-				AE83A18A24812830000EC633 /* Main.storyboard in Resources */,
+				AE83A1A524813971000EC633 /* wordlist.txt in Resources */,
+				AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,19 +298,109 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */,
+				AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D4FD163933151B0AAD972F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE83A1A724814287000EC633 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C262655EB62A0B71DC9B33B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8379E7F06FE6C3B487E935E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE83A17B24812830000EC633 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE83A18724812830000EC633 /* ViewController.swift in Sources */,
 				AE83A18324812830000EC633 /* AppDelegate.swift in Sources */,
+				AE83A1AD248151BA000EC633 /* SingleLetter.swift in Sources */,
+				AE8ADFBE2486A6CE00CC4262 /* ResultViewController.swift in Sources */,
+				AE8ADFBB24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */,
+				AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
+				AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */,
+				AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */,
+				AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +408,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */,
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
+				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
+				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
+				AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +427,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AE83A18824812830000EC633 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE83A18924812830000EC633 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AE83A18D24812836000EC633 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -360,11 +554,13 @@
 		};
 		AE83A19F24812837000EC633 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UYL8Y2AQLA;
 				INFOPLIST_FILE = ScrabWordFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,11 +574,13 @@
 		};
 		AE83A1A024812837000EC633 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UYL8Y2AQLA;
 				INFOPLIST_FILE = ScrabWordFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +594,7 @@
 		};
 		AE83A1A224812837000EC633 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +617,7 @@
 		};
 		AE83A1A324812837000EC633 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
