@@ -25,6 +25,14 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         return button
     }()
+    
+    // Info label
+    lazy var infoLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.text = "Use keyboard to enter letters"
+        label.textColor = UIColor.white
+        return label
+    }()
 
     // Trie algorithm object
     let scrabAlgorithm = ScrableAlgorithm()
@@ -49,7 +57,7 @@ class MainViewController: UIViewController {
         //Loading list of words
         loadWordList(fileName: "wordlist")
 
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)
 
         //Adding action while editing textfield
         lettersTextfield.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
@@ -64,21 +72,35 @@ class MainViewController: UIViewController {
 
         if let textFieldString: String = lettersTextfield.text {
             if !textFieldString.isEmpty {
-                validWordsArray = scrabAlgorithm.findValidWords(in: wordsArray, with: Array(textFieldString))
-                performSegue(withIdentifier: Constants.mainToResultSegue, sender: self)
+                
+                let charactersArray: [Character] = Array(textFieldString)
+                
+                if validateLetters(of: charactersArray) {
+                    validWordsArray = scrabAlgorithm.findValidWords(in: wordsArray, with: charactersArray)
+                    performSegue(withIdentifier: Constants.mainToResultSegue, sender: self)
+                } else {
+                    lettersTextfield.shakeTexfield()
+                }
+                
             } else {
-                print("Empty textfield")
+                lettersTextfield.shakeTexfield()
             }
         }
     }
 
+    // Preparing view controller for seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.mainToResultSegue {
             let destinationVC = segue.destination as? ResultViewController
             destinationVC!.validWordsArray = validWordsArray
         }
     }
-
+    
+    // Checking if letters are correct (included in alphabet array)
+    private func validateLetters(of lettersArray: [Character]) -> Bool {
+        return false
+    }
+    
     // Loading words list from file
     private func loadWordList(fileName: String) {
         if let filepath = Bundle.main.path(forResource: fileName, ofType: "txt") {
@@ -96,27 +118,28 @@ class MainViewController: UIViewController {
     // Adding subviews to main view
     private func setupViews() {
 
-        self.view.addSubview(backgroundImage)
-        backgroundImage.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view.snp.edges)
-        }
-
+//        self.view.addSubview(backgroundImage)
+//        backgroundImage.snp.makeConstraints { (make) in
+//            make.edges.equalTo(self.view.snp.edges)
+//        }
+        
+        // Adding textfield to view
         self.view.addSubview(lettersTextfield)
         lettersTextfield.snp.makeConstraints { (make) in
             make.height.equalTo(self.view.frame.height/3)
             make.center.equalTo(self.view.snp.center)
             make.left.equalTo(self.view.snp.leftMargin)
             make.right.equalTo(self.view.snp.rightMargin)
-
+        }
+        
+        // Adding info label
+        self.view.addSubview(infoLabel)
+        infoLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(lettersTextfield.snp.top)
+            make.centerX.equalTo(lettersTextfield.snp.centerX)
         }
 
-//        self.view.addSubview(sampleLetter)
-//        sampleLetter.snp.makeConstraints { (make) in
-//            make.width.equalTo(50)
-//            make.height.equalTo(50)
-//            make.center.equalTo(self.view.snp.center)
-//        }
-
+        // Adding button to view
         self.view.addSubview(generateButton)
         generateButton.snp.makeConstraints { (make) in
             make.width.equalTo(100)
@@ -124,7 +147,6 @@ class MainViewController: UIViewController {
             make.centerX.equalTo(self.view.snp.centerX)
             make.top.equalTo(100)
         }
-
     }
 
 }

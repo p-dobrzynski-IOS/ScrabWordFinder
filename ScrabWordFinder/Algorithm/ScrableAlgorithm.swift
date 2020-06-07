@@ -10,36 +10,6 @@ import Foundation
 
 struct ScrableAlgorithm {
 
-    let alphabet: [(char: Character, value: Int)] =
-        [
-            (char: "A", value: 1),
-            (char: "B", value: 3),
-            (char: "C", value: 3),
-            (char: "D", value: 2),
-            (char: "E", value: 1),
-            (char: "F", value: 4),
-            (char: "G", value: 2),
-            (char: "H", value: 4),
-            (char: "I", value: 1),
-            (char: "J", value: 8),
-            (char: "K", value: 5),
-            (char: "L", value: 1),
-            (char: "M", value: 3),
-            (char: "N", value: 1),
-            (char: "O", value: 1),
-            (char: "P", value: 3),
-            (char: "Q", value: 10),
-            (char: "R", value: 1),
-            (char: "S", value: 1),
-            (char: "T", value: 1),
-            (char: "U", value: 1),
-            (char: "V", value: 4),
-            (char: "W", value: 4),
-            (char: "X", value: 8),
-            (char: "Y", value: 4),
-            (char: "Z", value: 10)
-    ]
-
     func findValidWords(in dictionary: [String], with letters: [Character]) -> [(points: Int, words: [String])] {
 
         var validWords = [(word: String, value: Int)]()
@@ -66,8 +36,8 @@ struct ScrableAlgorithm {
 
         var wordValue: Int = 0
         for char in word.uppercased() {
-            if let index = alphabet.firstIndex(where: { $0.char == char }) {
-                wordValue += alphabet[index].value
+            if let index = Constants.pointsAlphabet.firstIndex(where: { $0.char == char }) {
+                wordValue += Constants.pointsAlphabet[index].value
             }
         }
         return wordValue
