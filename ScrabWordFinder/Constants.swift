@@ -12,4 +12,9 @@ struct Constants {
 
     static let mainToResultSegue = "MainToResult"
 
+    struct Colors {
+        static let scrabbleBlockBackgroundColor = "scrabbleBlockBackgroundColor"
+        static let scrabbleBlockLetterColor = "scrabbleBlockLetterColor"
+    }
+
 }

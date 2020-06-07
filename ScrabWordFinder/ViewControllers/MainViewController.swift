@@ -11,15 +11,11 @@ import SnapKit
 
 class MainViewController: UIViewController {
 
+    //Background Image
+    let backgroundImage = UIImageView(image: UIImage(named: "backgroundPool"))
+
     // Textfield to enter selected letters
-    lazy var lettersTextfield: UITextField = {
-        let textfield: UITextField = UITextField()
-        textfield.placeholder = "Enter letters"
-        textfield.font = UIFont.systemFont(ofSize: 15)
-        textfield.borderStyle = UITextField.BorderStyle.roundedRect
-        textfield.autocorrectionType = .no
-        return textfield
-    }()
+    let lettersTextfield: ScrabTextField = ScrabTextField()
 
     // Generate Words Button
     lazy var generateButton: UIButton = {
@@ -57,11 +53,10 @@ class MainViewController: UIViewController {
 
         //Adding action while editing textfield
         lettersTextfield.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
-
     }
 
     @objc func myTextFieldDidChange(_ textField: UITextField) {
-
+        
     }
 
     // Button pressed Event
@@ -100,11 +95,19 @@ class MainViewController: UIViewController {
 
     // Adding subviews to main view
     private func setupViews() {
+
+        self.view.addSubview(backgroundImage)
+        backgroundImage.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view.snp.edges)
+        }
+
         self.view.addSubview(lettersTextfield)
         lettersTextfield.snp.makeConstraints { (make) in
-            make.width.equalTo(100)
-            make.height.equalTo(40)
+            make.height.equalTo(self.view.frame.height/3)
             make.center.equalTo(self.view.snp.center)
+            make.left.equalTo(self.view.snp.leftMargin)
+            make.right.equalTo(self.view.snp.rightMargin)
+
         }
 
 //        self.view.addSubview(sampleLetter)

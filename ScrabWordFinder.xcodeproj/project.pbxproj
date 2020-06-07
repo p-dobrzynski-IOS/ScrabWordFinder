@@ -28,6 +28,10 @@
 		AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC62488E1C100CC4262 /* Constants.swift */; };
 		AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
 		AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
+		AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetter.swift */; };
+		AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */; };
+		AE8ADFCF248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */; };
+		AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */; };
 		C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */; };
 		D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +70,7 @@
 		AE8ADFC224880D6200CC4262 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AE8ADFC62488E1C100CC4262 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTableViewCell.swift; sourceTree = "<group>"; };
+		AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleLettersSandView.swift; sourceTree = "<group>"; };
 		BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +185,7 @@
 				AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */,
 				AE83A1AC248151BA000EC633 /* SingleLetter.swift */,
 				AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */,
+				AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 				AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
 				AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */,
 				AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */,
+				AE8ADFCF248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
 				AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +416,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */,
+				AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */,
+				AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
+				AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */,
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
 				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
