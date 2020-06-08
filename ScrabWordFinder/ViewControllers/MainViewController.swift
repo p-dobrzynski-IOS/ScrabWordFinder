@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
         setupViews()
 
         //Loading list of words
-        loadWordList(fileName: "wordlist")
+        wordsArray = loadWordList(fileName: "wordlist")
 
         self.view.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)
 
@@ -102,17 +102,19 @@ class MainViewController: UIViewController {
     }
     
     // Loading words list from file
-    private func loadWordList(fileName: String) {
+    func loadWordList(fileName: String) -> [String] {
+        var wordDict: [String] = [String]()
         if let filepath = Bundle.main.path(forResource: fileName, ofType: "txt") {
             do {
                 let file = try String(contentsOfFile: filepath)
-                wordsArray = file.components(separatedBy: "\n")
+                wordDict = file.components(separatedBy: "\n")
             } catch let error {
                 Swift.print("Fatal Error: \(error.localizedDescription)")
             }
         } else {
             print("not found")
         }
+        return wordDict
     }
 
     // Adding subviews to main view
