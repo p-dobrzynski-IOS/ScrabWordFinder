@@ -11,4 +11,12 @@ import XCTest
 
 class ScrabWordFinderTests: XCTestCase {
     
+    func testLoadFile() {
+        let mainVC = MainViewController()
+        let wordsDict = mainVC.loadWordList(fileName: "wordlist")
+        
+        let wordsInDict = wordsDict.count
+        
+        XCTAssertEqual(wordsInDict, 10001)
+    }
 }

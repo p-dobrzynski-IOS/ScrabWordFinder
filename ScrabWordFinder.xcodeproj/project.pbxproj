@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
 		AE83A18324812830000EC633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18224812830000EC633 /* AppDelegate.swift */; };
 		AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18424812830000EC633 /* SceneDelegate.swift */; };
 		AE83A18C24812836000EC633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18B24812836000EC633 /* Assets.xcassets */; };
@@ -419,6 +420,7 @@
 				AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */,
 				AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
 				AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */,
+				AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */,
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
 				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
