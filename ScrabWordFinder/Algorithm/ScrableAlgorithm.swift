@@ -46,7 +46,7 @@ struct ScrableAlgorithm {
     private func getsortedWords(from validWordsArray: [(word: String, value: Int)]) -> [(points: Int, words: [String])] {
 
         let sortedWords = validWordsArray.sorted { (tuple1, tuple2) -> Bool in
-            if (tuple1.value != tuple2.value) { // if it's not the same section sort by section
+            if tuple1.value != tuple2.value { // if it's not the same section sort by section
                 return tuple1.value > tuple2.value
             } else { // if it the same section sort by order.
                 return tuple1.word < tuple2.word

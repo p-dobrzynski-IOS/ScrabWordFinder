@@ -97,8 +97,12 @@ class MainViewController: UIViewController {
     }
     
     // Checking if letters are correct (included in alphabet array)
-    private func validateLetters(of lettersArray: [Character]) -> Bool {
-        return false
+    func validateLetters(of lettersArray: [Character]) -> Bool {
+        for char in lettersArray {            if !Constants.pointsAlphabet.contains(where: {$0.char == Character(char.uppercased())}) {
+                return false
+            }
+        }
+        return true
     }
     
     // Loading words list from file
