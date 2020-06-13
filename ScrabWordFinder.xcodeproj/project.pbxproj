@@ -10,6 +10,12 @@
 		AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
 		AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
 		AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
+		AE631FB92492749600CF4F32 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE631FB82492749600CF4F32 /* GameScene.sks */; };
+		AE631FBA2492749600CF4F32 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE631FB82492749600CF4F32 /* GameScene.sks */; };
+		AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
+		AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
+		AE631FBF249275FE00CF4F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* GameViewController.swift */; };
+		AE631FC0249275FE00CF4F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* GameViewController.swift */; };
 		AE83A18324812830000EC633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18224812830000EC633 /* AppDelegate.swift */; };
 		AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18424812830000EC633 /* SceneDelegate.swift */; };
 		AE83A18C24812836000EC633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18B24812836000EC633 /* Assets.xcassets */; };
@@ -55,7 +61,9 @@
 		5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.release.xcconfig"; sourceTree = "<group>"; };
 		6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SingleScrabbleSound.wav; sourceTree = "<group>"; };
-		AE55555D248FB5CB0094ED34 /* GameScene.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameScene.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AE631FB82492749600CF4F32 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		AE631FBB249274A800CF4F32 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AE631FBE249275FE00CF4F32 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AE83A17F24812830000EC633 /* ScrabWordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabWordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE83A18224812830000EC633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE83A18424812830000EC633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +128,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE631FB42492744F00CF4F32 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				AE631FB82492749600CF4F32 /* GameScene.sks */,
+				AE631FBB249274A800CF4F32 /* GameScene.swift */,
+				AE631FBE249275FE00CF4F32 /* GameViewController.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
 		AE83A17624812830000EC633 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +161,7 @@
 		AE83A18124812830000EC633 /* ScrabWordFinder */ = {
 			isa = PBXGroup;
 			children = (
+				AE631FB42492744F00CF4F32 /* GameScene */,
 				AE8ADFC52488E18200CC4262 /* Storyboards */,
 				AE83A1B2248530D4000EC633 /* Algorithm */,
 				AE83A1A924814AA7000EC633 /* CustomControls */,
@@ -153,7 +172,6 @@
 				AE83A18B24812836000EC633 /* Assets.xcassets */,
 				AE83A19024812836000EC633 /* Info.plist */,
 				AE8ADFC62488E1C100CC4262 /* Constants.swift */,
-				AE55555D248FB5CB0094ED34 /* GameScene.playground */,
 			);
 			path = ScrabWordFinder;
 			sourceTree = "<group>";
@@ -303,6 +321,7 @@
 				AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */,
 				AE83A18C24812836000EC633 /* Assets.xcassets in Resources */,
 				AE83A1A524813971000EC633 /* wordlist.txt in Resources */,
+				AE631FB92492749600CF4F32 /* GameScene.sks in Resources */,
 				AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */,
 			);
@@ -312,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE631FBA2492749600CF4F32 /* GameScene.sks in Resources */,
 				AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */,
 				AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */,
@@ -411,7 +431,9 @@
 				AE83A1AD248151BA000EC633 /* SingleLetter.swift in Sources */,
 				AE8ADFBE2486A6CE00CC4262 /* ResultViewController.swift in Sources */,
 				AE8ADFBB24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
+				AE631FBF249275FE00CF4F32 /* GameViewController.swift in Sources */,
 				AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */,
+				AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
 				AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */,
 				AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */,
@@ -424,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */,
 				AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */,
 				AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
@@ -432,6 +455,7 @@
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
 				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
+				AE631FC0249275FE00CF4F32 /* GameViewController.swift in Sources */,
 				AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
