@@ -9,11 +9,18 @@
 import Foundation
 import SpriteKit
 import UIKit
+import SnapKit
 
 class GameViewController: UIViewController {
-
+    
+    let label = UILabel()
+    
+    override func loadView() {
+        self.view = SKView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
-        let scene: GameScene = GameScene(size: view.bounds.size)
+        let scene: GameScene = GameScene(size: view.frame.size)
 
         // swiftlint:disable force_cast
         let skView = self.view as! SKView
@@ -25,6 +32,14 @@ class GameViewController: UIViewController {
         scene.scaleMode = .aspectFill
 
         skView.presentScene(scene)
+        
+        self.view.addSubview(label)
+        label.text = "SDAD"
+        label.backgroundColor = UIColor.white
+        label.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view.snp.center)
+        }
+        
     }
 
 }
