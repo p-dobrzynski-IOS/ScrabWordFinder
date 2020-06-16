@@ -10,9 +10,9 @@ import Foundation
 
 struct ScrableAlgorithm {
 
-    func findValidWords(in dictionary: [String], with letters: [Character]) -> [(points: Int, words: [String])] {
+    func findValidWords(in dictionary: [String], with letters: [Character]) -> [ValidWords] {
 
-        var validWords = [(word: String, value: Int)]()
+        var validWords = [SingleValidWord]()
 
         for dictWord in dictionary {
             var temp = dictWord
@@ -20,14 +20,16 @@ struct ScrableAlgorithm {
                 temp = temp.filter { $0 != char }
                 if temp.isEmpty {
                     let wordValue = getWordValue(fromWord: dictWord)
-                    validWords.append((word: dictWord, value: wordValue))
+                    validWords.append(SingleValidWord(word: dictWord, value: wordValue, letters: letters))
+
+//                     validWords.append((word: dictWord, value: wordValue))
                     break
                 }
             }
         }
 
         // Sorting words by alphabetical order and value
-        let wordsPointsArray: [(points: Int, words: [String])] = getsortedWords(from: validWords)
+        let wordsPointsArray: [ValidWords] = getsortedWords(from: validWords)
 
         return wordsPointsArray
     }
@@ -43,17 +45,17 @@ struct ScrableAlgorithm {
         return wordValue
     }
 
-    private func getsortedWords(from validWordsArray: [(word: String, value: Int)]) -> [(points: Int, words: [String])] {
+    private func getsortedWords(from validWordsArray: [SingleValidWord]) -> [ValidWords] {
 
-        let sortedWords = validWordsArray.sorted { (tuple1, tuple2) -> Bool in
-            if tuple1.value != tuple2.value { // if it's not the same section sort by section
-                return tuple1.value > tuple2.value
+        let sortedWords = validWordsArray.sorted { (valid1, valid2) -> Bool in
+            if valid1.value != valid2.value { // if it's not the same section sort by section
+                return valid1.value > valid2.value
             } else { // if it the same section sort by order.
-                return tuple1.word < tuple2.word
+                return valid1.word < valid2.word
             }
         }
         
-        var wordsArray: [(points: Int, words: [String])] = [(points: sortedWords[0].value, words: [sortedWords[0].word])]
+        var wordsArray: [ValidWords] = [ValidWords(points: sortedWords[0].value, words: [sortedWords[0].word], letters: sortedWords[0].letters)]
 
         var counter: Int = 0
         for index in 1...sortedWords.count - 1 {
@@ -61,7 +63,7 @@ struct ScrableAlgorithm {
                 wordsArray[counter].words.append(sortedWords[index].word)
             } else {
                 counter += 1
-                wordsArray.append(((sortedWords[index].value), [sortedWords[index].word]))
+                wordsArray.append(ValidWords(points: sortedWords[index].value, words: [sortedWords[index].word], letters: sortedWords[index].letters))
             }
         }
 

@@ -15,19 +15,25 @@ class MainViewController: UIViewController {
     let backgroundImage = UIImageView(image: UIImage(named: "backgroundPool"))
 
     // Textfield to enter selected letters
-    let lettersTextfield: ScrabTextField = ScrabTextField()
+    let lettersTextfield: ScrabTextField = {
+        let textfield: ScrabTextField = ScrabTextField()
+        //Adding action while editing textfield
+        textfield.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        return textfield
+    }()
 
     // Generate Words Button
-    lazy var generateButton: UIButton = {
+    let generateButton: UIButton = {
         let button: UIButton = UIButton()
         button.titleLabel?.text = "Calculate"
         button.backgroundColor = .red
+        //Adding action on button click
         button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         return button
     }()
     
     // Info label
-    lazy var infoLabel: UILabel = {
+    let infoLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Use keyboard to enter letters"
         label.textColor = UIColor.white
@@ -41,30 +47,36 @@ class MainViewController: UIViewController {
     lazy var wordsArray: [String] = [String]()
 
     // Valid words array
-    var validWordsArray: [(points: Int, words: [String])]?
-
-    lazy var sampleLetter: SingleLetter = SingleLetter()
+    var validWordsArray: [ValidWords]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        sampleLetter.setCharacter(letterCharacter: "W")
-
-        //Addding UI elements to view
-        setupViews()
 
         //Loading list of words
         wordsArray = loadWordList(fileName: "wordlist")
 
         self.view.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)
 
-        //Adding action while editing textfield
-        lettersTextfield.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        //Addding UI elements to view
+        setupViews()
+
+//        lettersTextfield.becomeFirstResponder()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     @objc func myTextFieldDidChange(_ textField: UITextField) {
         
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        print("WILL SHOW")
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        print("WILL DISAPEAR")
     }
 
     // Button pressed Event
@@ -77,7 +89,7 @@ class MainViewController: UIViewController {
                 
                 if validateLetters(of: charactersArray) {
                     validWordsArray = scrabAlgorithm.findValidWords(in: wordsArray, with: charactersArray)
-                    performSegue(withIdentifier: Constants.mainToResultSegue, sender: self)
+                    performSegue(withIdentifier: Constants.EnterToResultSegue, sender: self)
                 } else {
                     lettersTextfield.shakeTexfield()
                 }
@@ -90,7 +102,7 @@ class MainViewController: UIViewController {
 
     // Preparing view controller for seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.mainToResultSegue {
+        if segue.identifier == Constants.EnterToResultSegue {
             let destinationVC = segue.destination as? ResultViewController
             destinationVC!.validWordsArray = validWordsArray
         }
@@ -99,7 +111,7 @@ class MainViewController: UIViewController {
     // Checking if letters are correct (included in alphabet array)
     func validateLetters(of lettersArray: [Character]) -> Bool {
         for char in lettersArray {            if !Constants.pointsAlphabet.contains(where: {$0.char == Character(char.uppercased())}) {
-                return false
+            return false
             }
         }
         return true
@@ -124,11 +136,18 @@ class MainViewController: UIViewController {
     // Adding subviews to main view
     private func setupViews() {
 
-//        self.view.addSubview(backgroundImage)
-//        backgroundImage.snp.makeConstraints { (make) in
-//            make.edges.equalTo(self.view.snp.edges)
-//        }
-        
+        //        self.view.addSubview(backgroundImage)
+        //        backgroundImage.snp.makeConstraints { (make) in
+        //            make.edges.equalTo(self.view.snp.edges)
+        //        }
+
+        // Adding info label
+        self.view.addSubview(infoLabel)
+        infoLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.snp.topMargin).offset(20)
+            make.centerX.equalTo(self.view.snp.centerX)
+        }
+
         // Adding textfield to view
         self.view.addSubview(lettersTextfield)
         lettersTextfield.snp.makeConstraints { (make) in
@@ -137,13 +156,6 @@ class MainViewController: UIViewController {
             make.left.equalTo(self.view.snp.leftMargin)
             make.right.equalTo(self.view.snp.rightMargin)
         }
-        
-        // Adding info label
-        self.view.addSubview(infoLabel)
-        infoLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(lettersTextfield.snp.top)
-            make.centerX.equalTo(lettersTextfield.snp.centerX)
-        }
 
         // Adding button to view
         self.view.addSubview(generateButton)
@@ -151,7 +163,7 @@ class MainViewController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(50)
             make.centerX.equalTo(self.view.snp.centerX)
-            make.top.equalTo(100)
+            make.top.equalTo(lettersTextfield.snp.bottom).offset(10)
         }
     }
 

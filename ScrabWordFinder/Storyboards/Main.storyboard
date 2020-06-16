@@ -19,17 +19,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="J4X-g5-KO0"/>
                     <connections>
-                        <segue destination="JCN-Xh-yP3" kind="show" identifier="MainToResult" id="0QD-QE-jK3"/>
+                        <segue destination="JCN-Xh-yP3" kind="show" identifier="MainToEnter" id="0QD-QE-jK3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WgD-Z9-J8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942.02898550724649" y="93.75"/>
+            <point key="canvasLocation" x="438" y="94"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="6v3-qG-FsB">
             <objects>
-                <viewController id="JCN-Xh-yP3" customClass="ResultViewController" customModule="ScrabWordFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JCN-Xh-yP3" customClass="MainViewController" customModule="ScrabWordFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pst-y4-zd1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,10 +37,29 @@
                         <viewLayoutGuide key="safeArea" id="jI4-bO-4Nl"/>
                     </view>
                     <navigationItem key="navigationItem" id="vR2-sY-NuS"/>
+                    <connections>
+                        <segue destination="lE9-XN-Y0b" kind="show" identifier="EnterToResult" id="5fu-30-yEt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KM-cp-7Bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901" y="94"/>
+            <point key="canvasLocation" x="1426" y="94"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="2Vt-qj-xts">
+            <objects>
+                <viewController id="lE9-XN-Y0b" customClass="ResultViewController" customModule="ScrabWordFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S0G-ed-hPW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kfQ-W8-09n"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fyj-Am-nVp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5W-gt-bJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2593" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="daE-dm-yWr">
@@ -58,7 +77,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1u-cq-QgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.884057971014496" y="93.75"/>
+            <point key="canvasLocation" x="-539" y="94"/>
         </scene>
     </scenes>
 </document>
