@@ -10,7 +10,8 @@ import Foundation
 
 struct Constants {
 
-    static let mainToResultSegue = "MainToResult"
+    static let MainToEnterSegue = "MainToEnter"
+    static let EnterToResultSegue = "EnterToResult"
 
     struct Colors {
         static let scrabbleBlockBackgroundColor = "scrabbleBlockBackgroundColor"

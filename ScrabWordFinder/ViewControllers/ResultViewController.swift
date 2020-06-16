@@ -12,10 +12,15 @@ import SnapKit
 class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Tableview declaration
-    let pointsTableView: UITableView = UITableView()
+    let pointsTableView: UITableView = {
+        let tableView: UITableView = UITableView()
+        tableView.estimatedRowHeight = 55
+        tableView.rowHeight = 500
+        return tableView
+    }()
 
     // Initial array of Strings
-    var validWordsArray: [(points: Int, words: [String])]!
+    var validWordsArray: [ValidWords]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +30,6 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         pointsTableView.delegate = self
         pointsTableView.dataSource = self
-
-        pointsTableView.estimatedRowHeight = 55
-        pointsTableView.rowHeight = 500
 
         //Adding subviews to main view
         setupViews()
@@ -56,6 +58,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PointsTableViewCell
         cell?.words = validWordsArray[indexPath.row].words
         cell?.points = validWordsArray[indexPath.row].points
+        cell?.letters = validWordsArray[indexPath.row].letters
         tableView.beginUpdates()
         tableView.endUpdates()
         return cell!

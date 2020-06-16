@@ -10,8 +10,6 @@
 		AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
 		AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
 		AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
-		AE631FB92492749600CF4F32 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE631FB82492749600CF4F32 /* GameScene.sks */; };
-		AE631FBA2492749600CF4F32 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE631FB82492749600CF4F32 /* GameScene.sks */; };
 		AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
 		AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
 		AE631FBF249275FE00CF4F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* GameViewController.swift */; };
@@ -39,8 +37,12 @@
 		AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
 		AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetter.swift */; };
 		AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */; };
-		AE8ADFCF248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */; };
-		AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */; };
+		AEF3ED8F249791B700E162D7 /* SingleValidWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */; };
+		AEF3ED90249791B700E162D7 /* SingleValidWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */; };
+		AEF3ED922497950400E162D7 /* ValidWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED912497950400E162D7 /* ValidWords.swift */; };
+		AEF3ED932497950400E162D7 /* ValidWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED912497950400E162D7 /* ValidWords.swift */; };
+		AEF3ED952497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */; };
+		AEF3ED962497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */; };
 		C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */; };
 		D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */; };
 /* End PBXBuildFile section */
@@ -61,7 +63,6 @@
 		5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.release.xcconfig"; sourceTree = "<group>"; };
 		6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SingleScrabbleSound.wav; sourceTree = "<group>"; };
-		AE631FB82492749600CF4F32 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		AE631FBB249274A800CF4F32 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AE631FBE249275FE00CF4F32 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AE83A17F24812830000EC633 /* ScrabWordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabWordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +84,9 @@
 		AE8ADFC224880D6200CC4262 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AE8ADFC62488E1C100CC4262 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTableViewCell.swift; sourceTree = "<group>"; };
-		AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleLettersSandView.swift; sourceTree = "<group>"; };
+		AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleValidWord.swift; sourceTree = "<group>"; };
+		AEF3ED912497950400E162D7 /* ValidWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidWords.swift; sourceTree = "<group>"; };
+		AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldLayer.swift; sourceTree = "<group>"; };
 		BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,9 +134,7 @@
 		AE631FB42492744F00CF4F32 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				AE631FB82492749600CF4F32 /* GameScene.sks */,
 				AE631FBB249274A800CF4F32 /* GameScene.swift */,
-				AE631FBE249275FE00CF4F32 /* GameViewController.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -198,6 +199,7 @@
 		AE83A1A8248145CC000EC633 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AE631FBE249275FE00CF4F32 /* GameViewController.swift */,
 				AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */,
 				AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */,
 			);
@@ -210,7 +212,7 @@
 				AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */,
 				AE83A1AC248151BA000EC633 /* SingleLetter.swift */,
 				AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */,
-				AE8ADFCE248A5B0800CC4262 /* ScrabbleLettersSandView.swift */,
+				AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -219,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */,
+				AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */,
+				AEF3ED912497950400E162D7 /* ValidWords.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -321,7 +325,6 @@
 				AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */,
 				AE83A18C24812836000EC633 /* Assets.xcassets in Resources */,
 				AE83A1A524813971000EC633 /* wordlist.txt in Resources */,
-				AE631FB92492749600CF4F32 /* GameScene.sks in Resources */,
 				AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */,
 			);
@@ -331,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE631FBA2492749600CF4F32 /* GameScene.sks in Resources */,
 				AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */,
 				AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */,
@@ -435,9 +437,11 @@
 				AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */,
 				AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
+				AEF3ED922497950400E162D7 /* ValidWords.swift in Sources */,
 				AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */,
 				AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */,
-				AE8ADFCF248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
+				AEF3ED8F249791B700E162D7 /* SingleValidWord.swift in Sources */,
+				AEF3ED952497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */,
 				AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,13 +453,15 @@
 				AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */,
 				AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */,
-				AE8ADFD0248A5B0800CC4262 /* ScrabbleLettersSandView.swift in Sources */,
 				AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */,
 				AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */,
+				AEF3ED962497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */,
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
 				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
 				AE631FC0249275FE00CF4F32 /* GameViewController.swift in Sources */,
+				AEF3ED90249791B700E162D7 /* SingleValidWord.swift in Sources */,
+				AEF3ED932497950400E162D7 /* ValidWords.swift in Sources */,
 				AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

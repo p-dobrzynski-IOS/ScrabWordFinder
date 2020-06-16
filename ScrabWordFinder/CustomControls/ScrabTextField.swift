@@ -16,7 +16,7 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
         super.init(frame: frame)
         setupTexfield()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupTexfield()
@@ -52,48 +52,6 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
         return false
     }
     
-    // Getting CALayer of letter with points
-    private func getLetterLayer(inRect rect: CGRect, withLetter letter: Character, letterIndex index: Int) -> CALayer {
-        
-        let letterLayer = CALayer()
-        letterLayer.name = String(index)
-        letterLayer.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockBackgroundColor)?.cgColor
-        letterLayer.cornerRadius = rect.height / 15
-        letterLayer.frame = rect
-        letterLayer.opacity = 1.0
-        
-        let letterCharLayer = CATextLayer()
-        letterCharLayer.string = String(letter)
-        letterCharLayer.frame = letterLayer.bounds
-        letterCharLayer.fontSize = letterLayer.bounds.height - letterLayer.bounds.height/5
-        letterCharLayer.foregroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)?.cgColor
-        letterCharLayer.alignmentMode = .center
-        letterLayer.addSublayer(letterCharLayer)
-        
-        if !Constants.pointsAlphabet.contains(where: {$0.char == letter}) {
-            let errorBorderLayer = CALayer()
-            errorBorderLayer.frame = letterLayer.bounds
-            errorBorderLayer.cornerRadius = rect.height / 15
-            errorBorderLayer.borderWidth = 3
-            errorBorderLayer.borderColor = UIColor(named: Constants.Colors.scrabbleErrorFrameColor)?.cgColor
-            letterLayer.addSublayer(errorBorderLayer)
-            
-        } else {
-            let pointsCharLayer = CATextLayer()
-            
-            if let index = Constants.pointsAlphabet.firstIndex(where: {$0.char == letter}) {
-                pointsCharLayer.string = String(Constants.pointsAlphabet[index].value)
-            }
-            let pointLayerSize = CGSize(width: letterLayer.bounds.width/4, height: letterLayer.bounds.width/4)
-            pointsCharLayer.fontSize = pointLayerSize.height*0.85
-            pointsCharLayer.foregroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)?.cgColor
-            pointsCharLayer.frame = CGRect(origin: CGPoint(x: 3 * pointLayerSize.width, y: 3 * pointLayerSize.width), size: pointLayerSize)
-            letterLayer.addSublayer(pointsCharLayer)
-        }
-        
-        return letterLayer
-    }
-    
     // Getting empty dotted frame bar
     private func getEmptyBar(inRect rect: CGRect, letterIndex index: Int) -> CAShapeLayer {
         let emptyBarLayer: CAShapeLayer = CAShapeLayer()
@@ -116,7 +74,7 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
     
     // Override function for drawing text inside textfield
     override func drawText(in rect: CGRect) {
-                
+
         if lastTexfieldText.count > self.text!.count {
             return
         }
@@ -148,7 +106,7 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
         }
         
         // Creating and adding empty bar layer
-        let emptyLayer = getEmptyBar(inRect: letterRect, letterIndex: Int(lettersInTexfield))
+        let emptyLayer = EmptyFieldLayer(inRect: letterRect, ofIndex: Int(lettersInTexfield))
         
         if lettersInTexfield < numberOfLettersInLine * numberOfRows {
             self.layer.addSublayer(emptyLayer)
@@ -165,7 +123,7 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
             }
             
             // Creating and adding letter bar layer
-            let letterLayer = getLetterLayer(inRect: letterRect, withLetter: self.text!.uppercased().last!, letterIndex: Int(lettersInTexfield))
+            let letterLayer = SingleLetter(inRect: letterRect, ofCharacter: self.text!.uppercased().last!, ofIndex: Int(lettersInTexfield))
             
             self.layer.addSublayer(letterLayer)
             
