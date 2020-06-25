@@ -11,12 +11,12 @@ import UIKit
 class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
     
     var lastTexfieldText: String = String()
-        
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTexfield()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupTexfield()
@@ -32,6 +32,8 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
     
     // Overriding build in function
     override func draw(_ rect: CGRect) {
+        
+        // Drawing bottom border
         addBottomBorder()
     }
     
@@ -74,13 +76,20 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
     
     // Override function for drawing text inside textfield
     override func drawText(in rect: CGRect) {
-
+        
         if lastTexfieldText.count > self.text!.count {
             return
         }
         
         // Number of letters inside textfield
         let lettersInTexfield: CGFloat = CGFloat(self.text!.count)
+        
+        // Getting id name of layer
+        let letterID: String = String(format: "%d", Int(lettersInTexfield))
+        
+        if !isIdAvailable(letterId: letterID) {
+            return
+        }
         
         // Space between single letters
         let spaceBetweenLetters: CGFloat = 5.0
@@ -106,7 +115,8 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
         }
         
         // Creating and adding empty bar layer
-        let emptyLayer = EmptyFieldLayer(inRect: letterRect, ofIndex: Int(lettersInTexfield))
+        let emptyLayer = EmptyFieldLayer(ofIndex: Int(lettersInTexfield))
+        emptyLayer.frame = letterRect
         
         if lettersInTexfield < numberOfLettersInLine * numberOfRows {
             self.layer.addSublayer(emptyLayer)
@@ -123,7 +133,9 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
             }
             
             // Creating and adding letter bar layer
-            let letterLayer = SingleLetter(inRect: letterRect, ofCharacter: self.text!.uppercased().last!, ofIndex: Int(lettersInTexfield))
+            
+            let letterLayer = SingleLetterLayer(ofCharacter: self.text!.uppercased().last!, ofLetterID: letterID.uppercased())
+            letterLayer.frame = letterRect
             
             self.layer.addSublayer(letterLayer)
             
@@ -134,10 +146,20 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
             animation.duration = 0.3
             animation.delegate = self
             letterLayer.add(animation, forKey: "basic")
-            
         }
     }
     
+    private func isIdAvailable(letterId: String) -> Bool {
+        for layer in self.layer.sublayers! {
+            if let name = layer.name {
+                if name == letterId {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+     
     // Shake animation for texfield (if data is inncorrect)
     func shakeTexfield() {
         let shake = CABasicAnimation(keyPath: "position")
@@ -158,29 +180,8 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
         self.layer.add(shake, forKey: "position")
     }
     
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-//            let path = Bundle.main.path(forResource: "SingleScrabbleSound", ofType: "wav")!
-//            let url = URL(fileURLWithPath: path)
-//
-//            do {
-//                scrabbleSoundEffect = try AVAudioPlayer(contentsOf: url)
-//                scrabbleSoundEffect?.play()
-//            } catch {
-//                // couldn't load file :(
-//            }
-        }
-    }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        if string.count == 0 && range.length > 0 {
-//            // Back pressed
-//            if self.layer.sublayers!.count > 3 {
-//            }
-//            return false
-//        }
-                
         if let char = string.cString(using: String.Encoding.utf8) {
             let isBackSpace = strcmp(char, "\\b")
             if isBackSpace == -92 {
@@ -190,16 +191,11 @@ class ScrabTextField: UITextField, UITextFieldDelegate, CAAnimationDelegate {
                         lay.removeFromSuperlayer()
                     }
                 }
-                
-//                print(letterToDeleteLayer)
-//                _ = self.layer.sublayers?.popLast()
-//                _ = self.layer.sublayers?.popLast()
-
             }
         }
         
         lastTexfieldText = self.text!
-            
+        
         let maxLength = 10
         let currentString: NSString = textField.text! as NSString
         let newString: NSString =

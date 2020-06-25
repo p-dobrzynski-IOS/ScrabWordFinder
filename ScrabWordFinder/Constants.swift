@@ -10,14 +10,17 @@ import Foundation
 
 struct Constants {
 
-    static let MainToEnterSegue = "MainToEnter"
-    static let EnterToResultSegue = "EnterToResult"
+    static let MainToEnterSegue: String = "MainToEnter"
+    static let EnterToResultSegue: String = "EnterToResult"
 
     struct Colors {
-        static let scrabbleBlockBackgroundColor = "scrabbleBlockBackgroundColor"
-        static let scrabbleBlockLetterColor = "scrabbleBlockLetterColor"
-        static let scrabbleErrorFrameColor = "scrabbleErrorFrameColor"
+        static let scrabbleBlockBackgroundColor: String = "scrabbleBlockBackgroundColor"
+        static let scrabbleBlockLetterColor: String = "scrabbleBlockLetterColor"
+        static let scrabbleBlockLetterColorDarken: String = "scrabbleBlockLetterColorDarken"
+        static let scrabbleErrorFrameColor: String = "scrabbleErrorFrameColor"
     }
+    
+    static let maxLetterNumber: Int = 10
     
     static let pointsAlphabet: [(char: Character, value: Int)] =
         [

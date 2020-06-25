@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AD54A86ECC5427895A73655 /* Pods_ScrabWordFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BFDE745CF9834C4018EF42 /* Pods_ScrabWordFinderTests.framework */; };
 		AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
+		AE30A4282498FD18008B0EDF /* CorrectWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30A4272498FD18008B0EDF /* CorrectWordView.swift */; };
+		AE30A4292498FD18008B0EDF /* CorrectWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30A4272498FD18008B0EDF /* CorrectWordView.swift */; };
 		AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
 		AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */; };
 		AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
 		AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBB249274A800CF4F32 /* GameScene.swift */; };
-		AE631FBF249275FE00CF4F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* GameViewController.swift */; };
-		AE631FC0249275FE00CF4F32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* GameViewController.swift */; };
+		AE631FBF249275FE00CF4F32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* MainViewController.swift */; };
+		AE631FC0249275FE00CF4F32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631FBE249275FE00CF4F32 /* MainViewController.swift */; };
 		AE83A18324812830000EC633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18224812830000EC633 /* AppDelegate.swift */; };
 		AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A18424812830000EC633 /* SceneDelegate.swift */; };
 		AE83A18C24812836000EC633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE83A18B24812836000EC633 /* Assets.xcassets */; };
@@ -21,30 +24,33 @@
 		AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A19924812837000EC633 /* ScrabWordFinderTests.swift */; };
 		AE83A1A524813971000EC633 /* wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE83A1A424813971000EC633 /* wordlist.txt */; };
 		AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */; };
-		AE83A1AD248151BA000EC633 /* SingleLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetter.swift */; };
+		AE83A1AD248151BA000EC633 /* SingleLetterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetterLayer.swift */; };
 		AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFB5248551A300CC4262 /* dictionary.txt */; };
 		AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFB5248551A300CC4262 /* dictionary.txt */; };
 		AE8ADFBB24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */; };
 		AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */; };
 		AE8ADFBE2486A6CE00CC4262 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */; };
-		AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */; };
-		AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */; };
+		AE8ADFC02487AFBC00CC4262 /* EnterWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* EnterWordsViewController.swift */; };
+		AE8ADFC12487AFBC00CC4262 /* EnterWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBF2487AFBC00CC4262 /* EnterWordsViewController.swift */; };
 		AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFC224880D6200CC4262 /* Main.storyboard */; };
 		AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADFC224880D6200CC4262 /* Main.storyboard */; };
 		AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC62488E1C100CC4262 /* Constants.swift */; };
 		AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC62488E1C100CC4262 /* Constants.swift */; };
 		AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
 		AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */; };
-		AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetter.swift */; };
+		AE8ADFCC248A57AA00CC4262 /* SingleLetterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83A1AC248151BA000EC633 /* SingleLetterLayer.swift */; };
 		AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */; };
+		AEC05FD1249B826C005619B8 /* 7637-tap-click.json in Resources */ = {isa = PBXBuildFile; fileRef = AEC05FD0249B826C005619B8 /* 7637-tap-click.json */; };
+		AEC05FD2249B826C005619B8 /* 7637-tap-click.json in Resources */ = {isa = PBXBuildFile; fileRef = AEC05FD0249B826C005619B8 /* 7637-tap-click.json */; };
+		AEC05FD5249BA538005619B8 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEC05FD4249BA538005619B8 /* Pacifico-Regular.ttf */; };
+		AEC05FD6249BA538005619B8 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEC05FD4249BA538005619B8 /* Pacifico-Regular.ttf */; };
 		AEF3ED8F249791B700E162D7 /* SingleValidWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */; };
 		AEF3ED90249791B700E162D7 /* SingleValidWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */; };
 		AEF3ED922497950400E162D7 /* ValidWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED912497950400E162D7 /* ValidWords.swift */; };
 		AEF3ED932497950400E162D7 /* ValidWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED912497950400E162D7 /* ValidWords.swift */; };
 		AEF3ED952497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */; };
 		AEF3ED962497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */; };
-		C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */; };
-		D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */; };
+		CE3028308D7BC5ED51B3AE50 /* Pods_ScrabWordFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8908CE69A3E822CEF76E36A /* Pods_ScrabWordFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.release.xcconfig"; sourceTree = "<group>"; };
-		6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		00BFDE745CF9834C4018EF42 /* Pods_ScrabWordFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2618FA56C0348394A1644FFC /* Pods-ScrabWordFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		7440FEF0C3ADF84EFE132A9E /* Pods-ScrabWordFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8908CE69A3E822CEF76E36A /* Pods_ScrabWordFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC4454B1133A28DDCC4109 /* Pods-ScrabWordFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinderTests.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinderTests/Pods-ScrabWordFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE30A4272498FD18008B0EDF /* CorrectWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectWordView.swift; sourceTree = "<group>"; };
 		AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SingleScrabbleSound.wav; sourceTree = "<group>"; };
 		AE631FBB249274A800CF4F32 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		AE631FBE249275FE00CF4F32 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AE631FBE249275FE00CF4F32 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AE83A17F24812830000EC633 /* ScrabWordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabWordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE83A18224812830000EC633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE83A18424812830000EC633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,19 +84,20 @@
 		AE83A19B24812837000EC633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE83A1A424813971000EC633 /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
 		AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabTextField.swift; sourceTree = "<group>"; };
-		AE83A1AC248151BA000EC633 /* SingleLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetter.swift; sourceTree = "<group>"; };
+		AE83A1AC248151BA000EC633 /* SingleLetterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLetterLayer.swift; sourceTree = "<group>"; };
 		AE8ADFB5248551A300CC4262 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 		AE8ADFBA24855EA400CC4262 /* ScrableAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrableAlgorithm.swift; sourceTree = "<group>"; };
 		AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AE8ADFBF2487AFBC00CC4262 /* EnterWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterWordsViewController.swift; sourceTree = "<group>"; };
 		AE8ADFC224880D6200CC4262 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AE8ADFC62488E1C100CC4262 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTableViewCell.swift; sourceTree = "<group>"; };
+		AEC05FD0249B826C005619B8 /* 7637-tap-click.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7637-tap-click.json"; sourceTree = "<group>"; };
+		AEC05FD4249BA538005619B8 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		AEF3ED8E249791B600E162D7 /* SingleValidWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleValidWord.swift; sourceTree = "<group>"; };
 		AEF3ED912497950400E162D7 /* ValidWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidWords.swift; sourceTree = "<group>"; };
 		AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFieldLayer.swift; sourceTree = "<group>"; };
-		BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrabWordFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.debug.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		EA46C790B8281A5E5B33725A /* Pods-ScrabWordFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrabWordFinder.release.xcconfig"; path = "Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99784C070E6538F78E5A5FA /* Pods_ScrabWordFinder.framework in Frameworks */,
+				CE3028308D7BC5ED51B3AE50 /* Pods_ScrabWordFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,18 +113,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A23485645226B56FC9BF95 /* Pods_ScrabWordFinderTests.framework in Frameworks */,
+				2AD54A86ECC5427895A73655 /* Pods_ScrabWordFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5286507D97F9CAE9C5CACED0 /* Frameworks */ = {
+		7B46BFF251D060AB898D2A9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1412EA2A3E8BD8483748986D /* Pods_ScrabWordFinder.framework */,
-				BD2798D41F99D8668D3B20FF /* Pods_ScrabWordFinderTests.framework */,
+				A8908CE69A3E822CEF76E36A /* Pods_ScrabWordFinder.framework */,
+				00BFDE745CF9834C4018EF42 /* Pods_ScrabWordFinderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,10 +132,10 @@
 		9DE13C33C3B66A905F6B90CE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */,
-				5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */,
-				52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */,
-				6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */,
+				2618FA56C0348394A1644FFC /* Pods-ScrabWordFinder.debug.xcconfig */,
+				EA46C790B8281A5E5B33725A /* Pods-ScrabWordFinder.release.xcconfig */,
+				7440FEF0C3ADF84EFE132A9E /* Pods-ScrabWordFinderTests.debug.xcconfig */,
+				ADDC4454B1133A28DDCC4109 /* Pods-ScrabWordFinderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,7 +155,7 @@
 				AE83A19824812837000EC633 /* ScrabWordFinderTests */,
 				AE83A18024812830000EC633 /* Products */,
 				9DE13C33C3B66A905F6B90CE /* Pods */,
-				5286507D97F9CAE9C5CACED0 /* Frameworks */,
+				7B46BFF251D060AB898D2A9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +171,7 @@
 		AE83A18124812830000EC633 /* ScrabWordFinder */ = {
 			isa = PBXGroup;
 			children = (
+				AEC05FD3249BA523005619B8 /* Fonts */,
 				AE631FB42492744F00CF4F32 /* GameScene */,
 				AE8ADFC52488E18200CC4262 /* Storyboards */,
 				AE83A1B2248530D4000EC633 /* Algorithm */,
@@ -189,6 +199,7 @@
 		AE83A1A62481397E000EC633 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AEC05FD0249B826C005619B8 /* 7637-tap-click.json */,
 				AE37DE44248F9AC60064580F /* SingleScrabbleSound.wav */,
 				AE8ADFB5248551A300CC4262 /* dictionary.txt */,
 				AE83A1A424813971000EC633 /* wordlist.txt */,
@@ -199,9 +210,9 @@
 		AE83A1A8248145CC000EC633 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AE631FBE249275FE00CF4F32 /* GameViewController.swift */,
+				AE631FBE249275FE00CF4F32 /* MainViewController.swift */,
 				AE8ADFBD2486A6CE00CC4262 /* ResultViewController.swift */,
-				AE8ADFBF2487AFBC00CC4262 /* MainViewController.swift */,
+				AE8ADFBF2487AFBC00CC4262 /* EnterWordsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,9 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				AE83A1AA24814ADA000EC633 /* ScrabTextField.swift */,
-				AE83A1AC248151BA000EC633 /* SingleLetter.swift */,
+				AE83A1AC248151BA000EC633 /* SingleLetterLayer.swift */,
 				AE8ADFC92489045400CC4262 /* PointsTableViewCell.swift */,
 				AEF3ED942497AB0400E162D7 /* EmptyFieldLayer.swift */,
+				AE30A4272498FD18008B0EDF /* CorrectWordView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -236,6 +248,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		AEC05FD3249BA523005619B8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AEC05FD4249BA538005619B8 /* Pacifico-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,12 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE83A19E24812837000EC633 /* Build configuration list for PBXNativeTarget "ScrabWordFinder" */;
 			buildPhases = (
-				7D4FD163933151B0AAD972F9 /* [CP] Check Pods Manifest.lock */,
+				B4BC7C1CA84A6F59C68FD7D2 /* [CP] Check Pods Manifest.lock */,
 				AE83A17B24812830000EC633 /* Sources */,
 				AE83A17C24812830000EC633 /* Frameworks */,
 				AE83A17D24812830000EC633 /* Resources */,
-				C262655EB62A0B71DC9B33B3 /* [CP] Embed Pods Frameworks */,
 				AE83A1A724814287000EC633 /* Swiftlint */,
+				C510BF0735B2CF6423979317 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,7 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE83A1A124812837000EC633 /* Build configuration list for PBXNativeTarget "ScrabWordFinderTests" */;
 			buildPhases = (
-				C8379E7F06FE6C3B487E935E /* [CP] Check Pods Manifest.lock */,
+				528912C9F9C5B1F74DA61FEE /* [CP] Check Pods Manifest.lock */,
 				AE83A19124812837000EC633 /* Sources */,
 				AE83A19224812837000EC633 /* Frameworks */,
 				AE83A19324812837000EC633 /* Resources */,
@@ -325,6 +345,8 @@
 				AE8ADFC324880D6300CC4262 /* Main.storyboard in Resources */,
 				AE83A18C24812836000EC633 /* Assets.xcassets in Resources */,
 				AE83A1A524813971000EC633 /* wordlist.txt in Resources */,
+				AEC05FD1249B826C005619B8 /* 7637-tap-click.json in Resources */,
+				AEC05FD5249BA538005619B8 /* Pacifico-Regular.ttf in Resources */,
 				AE37DE45248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFB8248551A300CC4262 /* dictionary.txt in Resources */,
 			);
@@ -337,13 +359,15 @@
 				AE8ADFB9248551A300CC4262 /* dictionary.txt in Resources */,
 				AE37DE46248F9AC60064580F /* SingleScrabbleSound.wav in Resources */,
 				AE8ADFC424880D6300CC4262 /* Main.storyboard in Resources */,
+				AEC05FD2249B826C005619B8 /* 7637-tap-click.json in Resources */,
+				AEC05FD6249BA538005619B8 /* Pacifico-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D4FD163933151B0AAD972F9 /* [CP] Check Pods Manifest.lock */ = {
+		528912C9F9C5B1F74DA61FEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,7 +382,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinder-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinderTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -383,7 +407,29 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		C262655EB62A0B71DC9B33B3 /* [CP] Embed Pods Frameworks */ = {
+		B4BC7C1CA84A6F59C68FD7D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C510BF0735B2CF6423979317 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,28 +446,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScrabWordFinder/Pods-ScrabWordFinder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8379E7F06FE6C3B487E935E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScrabWordFinderTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -429,17 +453,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE30A4282498FD18008B0EDF /* CorrectWordView.swift in Sources */,
 				AE83A18324812830000EC633 /* AppDelegate.swift in Sources */,
-				AE83A1AD248151BA000EC633 /* SingleLetter.swift in Sources */,
+				AE83A1AD248151BA000EC633 /* SingleLetterLayer.swift in Sources */,
 				AE8ADFBE2486A6CE00CC4262 /* ResultViewController.swift in Sources */,
 				AE8ADFBB24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
-				AE631FBF249275FE00CF4F32 /* GameViewController.swift in Sources */,
+				AE631FBF249275FE00CF4F32 /* MainViewController.swift in Sources */,
 				AE83A18524812830000EC633 /* SceneDelegate.swift in Sources */,
 				AE631FBC249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFCA2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
 				AEF3ED922497950400E162D7 /* ValidWords.swift in Sources */,
 				AE83A1AB24814ADA000EC633 /* ScrabTextField.swift in Sources */,
-				AE8ADFC02487AFBC00CC4262 /* MainViewController.swift in Sources */,
+				AE8ADFC02487AFBC00CC4262 /* EnterWordsViewController.swift in Sources */,
 				AEF3ED8F249791B700E162D7 /* SingleValidWord.swift in Sources */,
 				AEF3ED952497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */,
 				AE8ADFC72488E1C100CC4262 /* Constants.swift in Sources */,
@@ -452,17 +477,18 @@
 			files = (
 				AE631FBD249274A800CF4F32 /* GameScene.swift in Sources */,
 				AE8ADFC82488E1C100CC4262 /* Constants.swift in Sources */,
-				AE8ADFCC248A57AA00CC4262 /* SingleLetter.swift in Sources */,
+				AE8ADFCC248A57AA00CC4262 /* SingleLetterLayer.swift in Sources */,
+				AE30A4292498FD18008B0EDF /* CorrectWordView.swift in Sources */,
 				AE8ADFCD248A57B000CC4262 /* ResultViewController.swift in Sources */,
 				AE2F737A248E568B0020D6C3 /* ScrabTextField.swift in Sources */,
 				AEF3ED962497AB0400E162D7 /* EmptyFieldLayer.swift in Sources */,
 				AE83A19A24812837000EC633 /* ScrabWordFinderTests.swift in Sources */,
 				AE8ADFBC24855EA400CC4262 /* ScrableAlgorithm.swift in Sources */,
 				AE8ADFCB2489045400CC4262 /* PointsTableViewCell.swift in Sources */,
-				AE631FC0249275FE00CF4F32 /* GameViewController.swift in Sources */,
+				AE631FC0249275FE00CF4F32 /* MainViewController.swift in Sources */,
 				AEF3ED90249791B700E162D7 /* SingleValidWord.swift in Sources */,
 				AEF3ED932497950400E162D7 /* ValidWords.swift in Sources */,
-				AE8ADFC12487AFBC00CC4262 /* MainViewController.swift in Sources */,
+				AE8ADFC12487AFBC00CC4262 /* EnterWordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +630,7 @@
 		};
 		AE83A19F24812837000EC633 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB163D5F5F858BFC9C7887A7 /* Pods-ScrabWordFinder.debug.xcconfig */;
+			baseConfigurationReference = 2618FA56C0348394A1644FFC /* Pods-ScrabWordFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,7 +650,7 @@
 		};
 		AE83A1A024812837000EC633 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E52441933FAA1A1CAB0AD5B /* Pods-ScrabWordFinder.release.xcconfig */;
+			baseConfigurationReference = EA46C790B8281A5E5B33725A /* Pods-ScrabWordFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -644,7 +670,7 @@
 		};
 		AE83A1A224812837000EC633 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52C79CE0AA6E267F722D6804 /* Pods-ScrabWordFinderTests.debug.xcconfig */;
+			baseConfigurationReference = 7440FEF0C3ADF84EFE132A9E /* Pods-ScrabWordFinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -667,7 +693,7 @@
 		};
 		AE83A1A324812837000EC633 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6829E272BC5B853D259B334A /* Pods-ScrabWordFinderTests.release.xcconfig */;
+			baseConfigurationReference = ADDC4454B1133A28DDCC4109 /* Pods-ScrabWordFinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

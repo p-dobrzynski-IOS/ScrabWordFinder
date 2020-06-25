@@ -1,170 +1,153 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  ScrabWordFinder
 //
-//  Created by Piotr on 29/05/2020.
+//  Created by Piotr on 11/06/2020.
 //  Copyright © 2020 Piotr. All rights reserved.
 //
 
+import Foundation
+import SpriteKit
 import UIKit
 import SnapKit
+import Lottie
 
 class MainViewController: UIViewController {
-
-    //Background Image
-    let backgroundImage = UIImageView(image: UIImage(named: "backgroundPool"))
-
-    // Textfield to enter selected letters
-    let lettersTextfield: ScrabTextField = {
-        let textfield: ScrabTextField = ScrabTextField()
-        //Adding action while editing textfield
-        textfield.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
-        return textfield
+    
+    let titleLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.font = UIFont(name: "Pacifico-Regular", size: 65)
+        label.textColor = .white
+        label.text = "Scrabble \n Finder"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
     }()
-
-    // Generate Words Button
-    let generateButton: UIButton = {
+    
+    let infoLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.text = "Tap to Start"
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let clickAnimationView: AnimationView = {
+        let animationView: AnimationView = AnimationView()
+        animationView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25)
+        animationView.layer.cornerRadius = 20
+        return animationView
+    }()
+    
+    let enterButton: UIButton = {
         let button: UIButton = UIButton()
-        button.titleLabel?.text = "Calculate"
-        button.backgroundColor = .red
-        //Adding action on button click
         button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonReleased(sender:)), for: .touchDown)
         return button
     }()
     
-    // Info label
-    let infoLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.text = "Use keyboard to enter letters"
-        label.textColor = UIColor.white
-        return label
-    }()
-
-    // Trie algorithm object
-    let scrabAlgorithm = ScrableAlgorithm()
-
-    // Words array
-    lazy var wordsArray: [String] = [String]()
-
-    // Valid words array
-    var validWordsArray: [ValidWords]?
-
+    override func loadView() {
+        self.view = SKView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
 
-        //Loading list of words
-        wordsArray = loadWordList(fileName: "wordlist")
+        // Adding gamescene to view
+        setupGameView()
 
-        self.view.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)
-
-        //Addding UI elements to view
-        setupViews()
-
-//        lettersTextfield.becomeFirstResponder()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func myTextFieldDidChange(_ textField: UITextField) {
+        // Adding UI elements to view
+        setupView()
         
+        // Start animation
+        startAnimation()
     }
 
-    @objc func keyboardWillShow(notification: NSNotification) {
-        print("WILL SHOW")
+    private func setupGameView() {
+        let scene: GameScene = GameScene(size: view.frame.size)
+        // swiftlint:disable force_cast
+        let skView = self.view as! SKView
+        // swiftlint:enable force_cast
+//        skView.showsFPS = true
+//        skView.showsNodeCount = true
+
+//        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .aspectFill
+
+        skView.presentScene(scene)
     }
 
-    @objc func keyboardWillHide(notification: NSNotification) {
-        print("WILL DISAPEAR")
-    }
-
-    // Button pressed Event
-    @objc private func buttonPressed(sender: UIButton) {
-
-        if let textFieldString: String = lettersTextfield.text {
-            if !textFieldString.isEmpty {
-                
-                let charactersArray: [Character] = Array(textFieldString)
-                
-                if validateLetters(of: charactersArray) {
-                    validWordsArray = scrabAlgorithm.findValidWords(in: wordsArray, with: charactersArray)
-                    performSegue(withIdentifier: Constants.EnterToResultSegue, sender: self)
-                } else {
-                    lettersTextfield.shakeTexfield()
-                }
-                
-            } else {
-                lettersTextfield.shakeTexfield()
-            }
-        }
-    }
-
-    // Preparing view controller for seque
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.EnterToResultSegue {
-            let destinationVC = segue.destination as? ResultViewController
-            destinationVC!.validWordsArray = validWordsArray
-        }
-    }
-    
-    // Checking if letters are correct (included in alphabet array)
-    func validateLetters(of lettersArray: [Character]) -> Bool {
-        for char in lettersArray {            if !Constants.pointsAlphabet.contains(where: {$0.char == Character(char.uppercased())}) {
-            return false
-            }
-        }
-        return true
-    }
-    
-    // Loading words list from file
-    func loadWordList(fileName: String) -> [String] {
-        var wordDict: [String] = [String]()
-        if let filepath = Bundle.main.path(forResource: fileName, ofType: "txt") {
-            do {
-                let file = try String(contentsOfFile: filepath)
-                wordDict = file.components(separatedBy: "\n")
-            } catch let error {
-                Swift.print("Fatal Error: \(error.localizedDescription)")
-            }
-        } else {
-            print("not found")
-        }
-        return wordDict
-    }
-
-    // Adding subviews to main view
-    private func setupViews() {
-
-        //        self.view.addSubview(backgroundImage)
-        //        backgroundImage.snp.makeConstraints { (make) in
-        //            make.edges.equalTo(self.view.snp.edges)
-        //        }
-
-        // Adding info label
-        self.view.addSubview(infoLabel)
-        infoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.snp.topMargin).offset(20)
-            make.centerX.equalTo(self.view.snp.centerX)
-        }
-
-        // Adding textfield to view
-        self.view.addSubview(lettersTextfield)
-        lettersTextfield.snp.makeConstraints { (make) in
-            make.height.equalTo(self.view.frame.height/3)
-            make.center.equalTo(self.view.snp.center)
+    private func setupView() {
+        self.view.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.snp.top)
             make.left.equalTo(self.view.snp.leftMargin)
             make.right.equalTo(self.view.snp.rightMargin)
+            make.bottom.equalTo(self.view.snp.centerY)
         }
-
-        // Adding button to view
-        self.view.addSubview(generateButton)
-        generateButton.snp.makeConstraints { (make) in
-            make.width.equalTo(100)
-            make.height.equalTo(50)
+        
+        self.view.addSubview(clickAnimationView)
+        
+        clickAnimationView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view.snp.centerX)
-            make.top.equalTo(lettersTextfield.snp.bottom).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.width.equalTo(self.view.snp.width).dividedBy(2)
+            make.height.equalTo(self.view.snp.width).dividedBy(2)
+        }
+                
+        self.view.addSubview(infoLabel)
+        
+        infoLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(clickAnimationView.snp.top)
+            make.left.equalTo(clickAnimationView.snp.leftMargin)
+            make.right.equalTo(clickAnimationView.snp.rightMargin)
+            make.height.equalTo(clickAnimationView.snp.height).dividedBy(3)
+        }
+        
+        self.view.addSubview(enterButton)
+        
+        enterButton.snp.makeConstraints { (make) in
+            make.edges.equalTo(clickAnimationView.snp.edges)
         }
     }
+    
+    private func startAnimation() {
+        let animation = Animation.named("7637-tap-click")
+        clickAnimationView.animation = animation
+        clickAnimationView.contentMode = .scaleAspectFit
+        clickAnimationView.loopMode = .loop
+        clickAnimationView.play()
+    }
 
+    @objc private func buttonPressed(sender: UIButton) {
+        clickAnimationView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.25)
+        performSegue(withIdentifier: Constants.MainToEnterSegue, sender: self)
+    }
+    
+    @objc private func buttonReleased(sender: UIButton) {
+        clickAnimationView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+    }
+    
+}
+
+extension UIViewController {
+    
+    func setCustomNavigationButton() {
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.setImage(UIImage(named: "arrow"), for: .normal)
+        menuBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
+        menuBtn.layer.masksToBounds = false
+        
+        let menuBarItem = UIBarButtonItem(customView: menuBtn)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 38)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 38)
+        currHeight?.isActive = true
+        self.navigationItem.leftBarButtonItem = menuBarItem
+    }
+    
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

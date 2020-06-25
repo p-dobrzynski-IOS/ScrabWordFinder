@@ -9,58 +9,111 @@
 import UIKit
 import SnapKit
 
-class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ResultViewController: UIViewController {
+    
     // Tableview declaration
     let pointsTableView: UITableView = {
         let tableView: UITableView = UITableView()
-        tableView.estimatedRowHeight = 55
-        tableView.rowHeight = 500
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+        tableView.backgroundColor = UIColor.clear
         return tableView
     }()
-
+    
+    // ScrollView
+    let pointsScrollView: UIScrollView = {
+        let scrollView: UIScrollView = UIScrollView()
+        return scrollView
+    }()
+    
     // Initial array of Strings
     var validWordsArray: [ValidWords]!
-
+    
+    // Array od words and poitns contatiners
+    var viewsContainterArray: [UIStackView] = [UIStackView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(validWordsArray!)
-
-        pointsTableView.register(PointsTableViewCell.self, forCellReuseIdentifier: "cell")
-
-        pointsTableView.delegate = self
-        pointsTableView.dataSource = self
-
+        
+        self.view.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)
+                
+        // Setting arrow as back button
+        setCustomNavigationButton()
+        
         //Adding subviews to main view
         setupViews()
     }
-
+    
     func getWords(ofIndex points: Int, fromArray validWords: [(word: String, value: Int)]) -> [String] {
-
         let sameWords: [String] = [String]()
-
         return sameWords
     }
     
     // Adding subviews to main view
     private func setupViews() {
-        self.view.addSubview(pointsTableView)
-        pointsTableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view.snp.edges)
+        
+        view.addSubview(pointsScrollView)
+                
+        pointsScrollView.snp.makeConstraints { (make) in
+            make.left.equalTo(self.view.snp.leftMargin)
+            make.right.equalTo(self.view.snp.rightMargin)
+            make.top.equalTo(self.view.snp.top)
+            make.bottom.equalTo(self.view.snp.bottom)
         }
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return validWordsArray.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PointsTableViewCell
-        cell?.words = validWordsArray[indexPath.row].words
-        cell?.points = validWordsArray[indexPath.row].points
-        cell?.letters = validWordsArray[indexPath.row].letters
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        return cell!
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 30
+        
+        pointsScrollView.addSubview(stackView)
+        
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalTo(pointsScrollView.snp.edges)
+            make.width.equalToSuperview()
+        }
+        
+        for validWord in validWordsArray {
+            
+            let subStackView = UIStackView()
+            subStackView.axis = .vertical
+            subStackView.spacing = 3
+            
+            let pointsLabel: UILabel = {
+                let label: UILabel = UILabel()
+                label.font = .systemFont(ofSize: self.view.frame.width/17)
+                label.text = String(format: "%d Points", validWord.points)
+                label.textColor = UIColor.white
+                label.layer.shadowColor = UIColor.black.cgColor
+                label.layer.shadowRadius = 2
+                label.layer.shadowOpacity = 0.5
+                label.layer.shadowOffset = CGSize(width: 2, height: 2)
+                label.layer.masksToBounds = false
+                return label
+            }()
+            
+            subStackView.addArrangedSubview(pointsLabel)
+            
+            let singleWordsStackView: UIStackView = {
+                let stackView: UIStackView = UIStackView()
+                stackView.axis = .vertical
+                stackView.spacing = 3
+                return stackView
+            }()
+            
+            for word in validWord.words {
+                let label = CorrectWordView(forWord: word)
+    
+                singleWordsStackView.addArrangedSubview(label)
+                
+                label.snp.makeConstraints { (make) in
+                    make.height.equalTo(self.view.frame.width/10)
+                }
+            }
+            
+            subStackView.addArrangedSubview(singleWordsStackView)
+            
+            stackView.addArrangedSubview(subStackView)
+            
+        }
     }
 }

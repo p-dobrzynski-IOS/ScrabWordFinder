@@ -9,56 +9,50 @@
 import UIKit
 import CoreText
 
-class SingleLetter: CALayer {
+class SingleLetterLayer: CALayer {
 
     var char: Character = "?"
-    var points: Int = 0 
+    var points: Int = 0
 
-    var layerRect: CGRect = .zero
-
-    init(inRect rect: CGRect) {
+    init(ofCharacter character: Character) {
         super.init()
-    }
-
-    init(inRect rect: CGRect, ofCharacter character: Character) {
-        super.init()
-
-        setupLayer()
-    }
-
-    init(inRect rect: CGRect, ofCharacter character: Character, ofIndex index: Int) {
-        super.init()
-
-        layerRect = rect
-        char = character
-
-        self.name = String(index)
         
-        setupLayer()
+        char = Character(String(character).uppercased())
+    }
+
+    init(ofCharacter character: Character, ofLetterID letterID: String) {
+        super.init()
+
+        char = Character(String(character).uppercased())
+        self.name = letterID
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSublayers() {
+        setupLayer()
+    }
 
     private func setupLayer() {
         self.backgroundColor = UIColor(named: Constants.Colors.scrabbleBlockBackgroundColor)?.cgColor
-        self.cornerRadius = layerRect.height / 15
-        self.frame = layerRect
+        self.cornerRadius = self.frame.height / 15
         self.opacity = 1.0
 
         let letterCharLayer = CATextLayer()
-        letterCharLayer.string = String(char)
+        letterCharLayer.string = String(char).uppercased()
         letterCharLayer.frame = self.bounds
         letterCharLayer.fontSize = self.bounds.height - self.bounds.height/5
         letterCharLayer.foregroundColor = UIColor(named: Constants.Colors.scrabbleBlockLetterColor)?.cgColor
         letterCharLayer.alignmentMode = .center
         self.addSublayer(letterCharLayer)
-
+        
         if !Constants.pointsAlphabet.contains(where: {$0.char == char}) {
+            
             let errorBorderLayer = CALayer()
             errorBorderLayer.frame = self.bounds
-            errorBorderLayer.cornerRadius = layerRect.height / 15
+            errorBorderLayer.cornerRadius = self.frame.height / 15
             errorBorderLayer.borderWidth = 3
             errorBorderLayer.borderColor = UIColor(named: Constants.Colors.scrabbleErrorFrameColor)?.cgColor
             self.addSublayer(errorBorderLayer)

@@ -15,14 +15,17 @@ struct ScrableAlgorithm {
         var validWords = [SingleValidWord]()
 
         for dictWord in dictionary {
+            if dictWord.count > Constants.maxLetterNumber {
+                continue
+            }
             var temp = dictWord
-            for char in letters {
+                        
+            for char  in letters {
                 temp = temp.filter { $0 != char }
+                
                 if temp.isEmpty {
                     let wordValue = getWordValue(fromWord: dictWord)
                     validWords.append(SingleValidWord(word: dictWord, value: wordValue, letters: letters))
-
-//                     validWords.append((word: dictWord, value: wordValue))
                     break
                 }
             }

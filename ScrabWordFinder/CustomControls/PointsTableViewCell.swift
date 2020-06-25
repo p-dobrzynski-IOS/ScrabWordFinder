@@ -10,108 +10,120 @@ import UIKit
 import SnapKit
 
 class PointsTableViewCell: UITableViewCell {
-
+    
     var letters: [Character]? {
         didSet {
             lettersLabel.text = String(letters!).uppercased()
         }
     }
-
+    
     var points: Int? {
         didSet {
             pointsValueLabel.text = String(format: "%d Points", points!)
         }
     }
-
+    
     var words: [String]? {
         didSet {
             addWords(wordsArray: words!)
         }
     }
-
+    
     let lettersLabel: UILabel = {
         let label: UILabel = UILabel()
+        label.textColor = UIColor.white
         return label
     }()
-
+    
     let pointsValueLabel: UILabel = {
-        let label = UILabel()
+        let label: UILabel = UILabel()
         label.text = "Points"
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 40)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowRadius = 3.0
+        label.layer.shadowOpacity = 0.25
+        label.layer.shadowOffset = CGSize(width: 2, height: 2)
+        label.layer.masksToBounds = false
         return label
     }()
-
+    
+    let mainStackView: UIStackView = {
+        let stackView: UIStackView = UIStackView()
+        stackView.axis = .vertical
+//        stackView.spacing = 20
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
     let wordsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.distribution = .fillEqually
         return stackView
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.translatesAutoresizingMaskIntoConstraints = false
         setupViews()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // Adding words to stackview
     private func addWords(wordsArray: [String]) {
-
-        let spacer = self.frame.width / 12
-
-        for (wordIndex, word) in wordsArray.enumerated() {
-
-            let wordView: UIView = UIView()
-
-            wordsStackView.addArrangedSubview(wordView)
-
-            wordView.snp.makeConstraints { (make) in
-                make.height.equalTo(64)
-                make.width.equalTo(self.snp.width)
-            }
-
-            for (charIndex, char) in word.enumerated() {
-//                let tempLayer = CALayer()
-                let tempLayer = SingleLetter(inRect: CGRect(x: 64*charIndex, y: 0, width: 20, height: 20), ofCharacter: "W")
-                tempLayer.frame = CGRect(x: 64*charIndex, y: 0, width: 20, height: 20)
-//                tempLayer.backgroundColor = UIColor.green.cgColor
-                wordView.layer.addSublayer(tempLayer)
-            }
-//            wordView.backgroundColor = UIColor.red
-//            for (charIndex, char) in word.enumerated() {
-//                let rect: CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 1000, height: 1000))
-//                let letterLayer = SingleLetter(inRect: rect, ofCharacter: char)
-//
-//                letterLayer.backgroundColor = UIColor.black.cgColor
-//                wordView.layer.insertSublayer(letterLayer, at: 3)
-//            }
-//            let letterLayer = SingleLetter(inRect: CGRect(x: 0.0, y: 0.0, width: 500, height: 54), ofCharacter: "W")
-
-
+        
+        let wordView: CorrectWordView = CorrectWordView(forWord: "DUPA")
+        wordsStackView.addArrangedSubview(wordView)
+        wordView.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+            make.left.equalTo(self.contentView.snp.left)
+            make.right.equalTo(self.contentView.snp.right)
+            make.bottom.equalTo(self.contentView)
         }
+        
+//        for word in wordsArray {
+//
+//            let tempView = UIView()
+//            tempView.backgroundColor = .red
+//            tempView.frame.size.height = 50
+//            let wordView: CorrectWordView = CorrectWordView(forWord: word)
+//
+//            var newFrame = wordView.frame
+//
+//            wordsStackView.addArrangedSubview(wordView)
+//
+//
+//            wordView.snp.makeConstraints { (make) in
+//                make.height.equalTo(60)
+//                make.left.equalTo(self.contentView.snp.left)
+//                make.right.equalTo(self.contentView.snp.right)
+//            }
+//        }
     }
-
+    
     // Adding subviews to cell view
     private func setupViews() {
-
-        self.contentView.addSubview(lettersLabel)
-        lettersLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.contentView.snp.leftMargin)
-            make.top.equalTo(self.contentView.snp.topMargin)
+        
+        self.contentView.addSubview(mainStackView)
+        mainStackView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.contentView.snp.edges)
+//                        make.left.equalTo(self.contentView.snp.leftMargin)
+//                        make.top.equalTo(self.contentView.snp.top).offset(10)
+//                        make.right.equalTo(self.contentView.snp.rightMargin)
+//                        make.bottom.equalTo(self.contentView.snp.bottom).offset(-25)
         }
-
-        self.contentView.addSubview(pointsValueLabel)
+        
+        mainStackView.addArrangedSubview(pointsValueLabel)
         pointsValueLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.contentView.snp.topMargin)
-            make.left.equalTo(self.lettersLabel.snp.right).offset(15)
+            make.height.equalTo(75)
         }
-
-        self.contentView.addSubview(wordsStackView)
-        wordsStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(pointsValueLabel.snp.bottom)
-            make.left.equalTo(self.contentView.snp.leftMargin)
-        }
+        
+        mainStackView.addArrangedSubview(wordsStackView)
+        
     }
-
+    
 }
