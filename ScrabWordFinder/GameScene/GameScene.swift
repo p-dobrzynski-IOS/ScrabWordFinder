@@ -14,10 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager = CMMotionManager()
     var XVector: CGFloat = 0.0
-    var YVector: CGFloat = 0.0
-    
-    var boxesSprites: [SKSpriteNode] = [SKSpriteNode]()
-    
+    var YVector: CGFloat = -10.0
+        
     override func sceneDidLoad() {
         addScrabbleBoxes()
     }
@@ -61,15 +59,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addScrabbleBoxes() {
-        for index in 0..<5 {
-            let box = SKSpriteNode(color: UIColor(named: Constants.Colors.scrabbleBlockBackgroundColor)!, size: CGSize(width: 64, height: 64))
-            box.position = CGPoint(x: index*64, y: index*64)
-            //            box.name = "box"
-            box.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 64, height: 64))
+        
+        let wordWordArray: [Character] = Array("WORDS")
+        
+        let boxSize: CGFloat = self.frame.width / CGFloat((wordWordArray.count + 2))
+        
+        for (index, char) in wordWordArray.enumerated() {
+            let layer = SingleLetterLayer(ofCharacter: char, ofLetterID: String(char))
+            layer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: boxSize, height: boxSize))
+            
+            let boxImage = imageFromLayer(layer: layer)
+            let box = SKSpriteNode(texture: SKTexture(image: boxImage))
+            box.position = CGPoint(x: (index+1) * Int(boxSize), y: Int(self.frame.height)/2)
+            box.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: boxSize, height: boxSize))
             box.physicsBody?.affectedByGravity = true
             box.physicsBody?.isDynamic = true
-            boxesSprites.append(box)
             addChild(box)
         }
+    }
+    
+    func imageFromLayer(layer: CALayer) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, layer.isOpaque, 0)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return outputImage!
     }
 }
