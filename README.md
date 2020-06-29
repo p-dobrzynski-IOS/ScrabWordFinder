@@ -8,7 +8,7 @@ Hello there! This is **ScrabWordFinder**, iOS app for finding words from given l
 
 ## Screens
 
-![alt text](http://url/to/img.png)
+![Alt text](/screens/ScrabWordFinder_01.png?raw=true "Optional Title")
 
 ## Instructions
 
