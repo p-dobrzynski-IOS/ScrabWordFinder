@@ -10,7 +10,7 @@ Hello there! This is **ScrabWordFinder**, iOS app for finding words from given l
 
 <!--![Alt text](/screens/ScrabWordFinder_01.png?raw=true "Optional Title")
 -->
-<img src="/screens/ScrabWordFinder_01.png" width="300"/> <img src="/screens/ScrabWordFinder_02.png" width="300"/> 
+<img src="/screens/ScrabWordFinder_01.png" width="300"/> <img src="/screens/ScrabWordFinder_02.png" width="300"/> <img src="/screens/ScrabWordFinder_03.png" width="300"/> 
 
 
 ## Info
