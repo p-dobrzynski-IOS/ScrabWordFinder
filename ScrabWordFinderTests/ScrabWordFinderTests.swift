@@ -17,7 +17,7 @@ class ScrabWordFinderTests: XCTestCase {
         
         let wordsInDict: Int = wordsDict.count
         
-        XCTAssertEqual(wordsInDict, 10001)
+        XCTAssertEqual(wordsInDict, 10000)
         XCTAssertEqual(wordsDict[382], "angle")
     }
     
