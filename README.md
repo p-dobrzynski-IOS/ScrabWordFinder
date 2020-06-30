@@ -17,7 +17,12 @@ This iOS app was created to find validated words from given letters. Words gener
 
 Application is based on **UINavigationController**. It also inludes some custom UI Elements such as custom **UITexfield** with dropping letters effect. 
 
+<img src="/gifs/letters_drop.gif" width="100"/>
+
+
 Project also use [SpriteKit](https://developer.apple.com/spritekit/) iOS framework, which allow to free fall of prepared sprites *(Main Screen)*. The effect also uses **gyro** readings that allow you to change the gravity of the GameScene.
+
+<img src="/gifs/shake_screen.gif" width="100"/>
 
 The application also contains **Unit tests** thanks to which it is possible to maintain the continuity of the application's operation.
 
