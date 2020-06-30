@@ -13,6 +13,15 @@ Hello there! This is **ScrabWordFinder**, iOS app for finding words from given l
 
 ## Info
 
+This iOS app was created to find validated words from given letters. Words generated from letters are compared to a list of possible words. Validated words are returned and presented in table.
+
+Application is based on **UINavigationController**. It also inludes some custom UI Elements such as custom **UITexfield** with dropping letters effect. 
+
+Project also use [SpriteKit](https://developer.apple.com/spritekit/) iOS framework, which allow to free fall of prepared sprites *(Main Screen)*. The effect also uses **gyro** readings that allow you to change the gravity of the GameScene.
+
+The application also contains **Unit tests** thanks to which it is possible to maintain the continuity of the application's operation.
+
+
 ## Used Tools
 
 ### Swiftlint
@@ -23,7 +32,7 @@ Link: [Swiftlint](https://github.com/realm/SwiftLint)
 
 ### Jenkins CI
 
-As an extensible automation server, Jenkins can be used as a simple CI server or turned into the continuous delivery hub for any project.
+All repo pull request are validated by Jenkins CI. As an extensible automation server, Jenkins can be used as a simple CI server or turned into the continuous delivery hub for any project.
 
 Link: [Jenkins CI](https://www.jenkins.io/)
 
@@ -40,3 +49,8 @@ Link: [Snapkit](https://www.google.com)
 Project use JSON based animations with [Lottie-ios](https://github.com/airbnb/lottie-ios) tool. Lottie is a mobile library for Android and iOS that natively renders vector based animations and art in realtime with minimal code.
 
 Link: [Lottie-ios](https://github.com/airbnb/lottie-ios)
+
+## TODO 
+ * Validate words by using dictionary API
+ * Add more Unit Test
+ * Ability to validate words in languages ​​other than English.
