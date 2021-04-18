@@ -13,28 +13,56 @@ struct ScrableAlgorithm {
     func findValidWords(in dictionary: [String], with letters: [Character]) -> [ValidWords] {
 
         var validWords = [SingleValidWord]()
-
-        for dictWord in dictionary {
-            if dictWord.count > Constants.maxLetterNumber {
-                continue
-            }
-            var temp = dictWord
-                        
-            for char  in letters {
-                temp = temp.filter { $0 != char }
-                
-                if temp.isEmpty {
-                    let wordValue = getWordValue(fromWord: dictWord)
-                    validWords.append(SingleValidWord(word: dictWord, value: wordValue, letters: letters))
-                    break
-                }
+ 
+        let permutatedList: Set<String> = permute(list: letters.map{String($0)})
+        
+        for permutatedWord in permutatedList {
+            if dictionary.contains(permutatedWord.lowercased()){
+                let wordValue = getWordValue(fromWord: permutatedWord.lowercased())
+                validWords.append(SingleValidWord(word: permutatedWord.lowercased(), value: wordValue, letters: letters))
             }
         }
+        
+//        for dictWord in dictionary {
+//            if dictWord.count > Constants.maxLetterNumber {
+//                continue
+//            }
+//            var temp = dictWord
+//
+//            for char  in letters {
+//                temp = temp.filter { $0 != char }
+//
+//                if temp.isEmpty {
+//                    let wordValue = getWordValue(fromWord: dictWord)
+//                    validWords.append(SingleValidWord(word: dictWord, value: wordValue, letters: letters))
+//                    break
+//                }
+//            }
+//        }
 
         // Sorting words by alphabetical order and value
         let wordsPointsArray: [ValidWords] = getsortedWords(from: validWords)
 
         return wordsPointsArray
+    }
+    
+    func permute(list: [String], minStringLen: Int = 2) -> Set<String> {
+        func permute(fromList: [String], toList: [String], minStringLen: Int, set: inout Set<String>) {
+            if toList.count >= minStringLen {
+                set.insert(toList.joined(separator: ""))
+            }
+            if !fromList.isEmpty {
+                for (index, item) in fromList.enumerated() {
+                    var newFrom = fromList
+                    newFrom.remove(at: index)
+                    permute(fromList: newFrom, toList: toList + [item], minStringLen: minStringLen, set: &set)
+                }
+            }
+        }
+
+        var set = Set<String>()
+        permute(fromList: list, toList:[], minStringLen: minStringLen, set: &set)
+        return set
     }
 
     private func getWordValue(fromWord word: String) -> Int {
